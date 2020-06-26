@@ -19,12 +19,12 @@ public class JaggedArrayServiceTest {
     @BeforeMethod
     public void setUp() {
         jaggedArrayService = new JaggedArrayService();
-        actual = new int[][]{{10, 88, 95}, {1, 99, 20}, {100, 125, 30}};
+        actual = new int[][]{{1, 12, 5}, {6, 7, 13}, {10, 15, 23}};
     }
 
     @Test
     public void sortArrayTestMin() {
-        int[][] expected = new int[][]{{1, 99, 20}, {10, 88, 95}, {100, 125, 30}};
+        int[][] expected = new int[][]{{1, 12, 5}, {6, 7, 13}, {10, 15, 23}};
         try {
             jaggedArrayService.sortArray(actual, new MinComparator(), false);
             boolean answer = jaggedArrayService.jaggedArraysEquals(actual, expected);
@@ -36,7 +36,7 @@ public class JaggedArrayServiceTest {
 
     @Test
     public void sortArrayTestMinReverse() {
-        int[][] expected = new int[][]{{100, 125, 30}, {10, 88, 95}, {1, 99, 20}};
+        int[][] expected = new int[][]{{10, 15, 23}, {6, 7, 13}, {1, 12, 5}};
         try {
             jaggedArrayService.sortArray(actual, new MinComparator(), true);
             boolean answer = jaggedArrayService.jaggedArraysEquals(actual, expected);
@@ -48,7 +48,7 @@ public class JaggedArrayServiceTest {
 
     @Test
     public void sortArrayTestMax() {
-        int[][] expected = new int[][]{{10, 88, 95}, {1, 99, 20}, {100, 125, 30}};
+        int[][] expected = new int[][]{{1, 12, 5}, {6, 7, 13}, {10, 15, 23}};
         try {
             jaggedArrayService.sortArray(actual, new MaxComparator(), false);
             boolean answer = jaggedArrayService.jaggedArraysEquals(actual, expected);
@@ -60,7 +60,7 @@ public class JaggedArrayServiceTest {
 
     @Test
     public void sortArrayTestMaxReverse() {
-        int[][] expected = new int[][]{{100, 125, 30}, {1, 99, 20}, {10, 88, 95}};
+        int[][] expected = new int[][]{{10, 15, 23}, {6, 7, 13}, {1, 12, 5}};
         try {
             jaggedArrayService.sortArray(actual, new MaxComparator(), true);
             boolean answer = jaggedArrayService.jaggedArraysEquals(actual, expected);
@@ -72,7 +72,7 @@ public class JaggedArrayServiceTest {
 
     @Test
     public void sortArrayTestSum() {
-        int[][] expected = new int[][]{{1, 99, 20}, {10, 88, 95}, {100, 125, 30}};
+        int[][] expected = new int[][]{{1, 12, 5}, {6, 7, 13}, {10, 15, 23}};
         try {
             jaggedArrayService.sortArray(actual, new SumComparator(), false);
             boolean answer = jaggedArrayService.jaggedArraysEquals(actual, expected);
@@ -84,7 +84,7 @@ public class JaggedArrayServiceTest {
 
     @Test
     public void sortArrayTestSumReverse() {
-        int[][] expected = new int[][]{{100, 125, 30}, {10, 88, 95}, {1, 99, 20}};
+        int[][] expected = new int[][]{{10, 15, 23}, {6, 7, 13}, {1, 12, 5}};
         try {
             jaggedArrayService.sortArray(actual, new SumComparator(), true);
             boolean answer = jaggedArrayService.jaggedArraysEquals(actual, expected);
